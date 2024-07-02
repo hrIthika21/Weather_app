@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
+
+body{
+    width: 100%;
+    min-height: 100vh;
+}
+
+.navbar{
+    box-sizing: border-box;
+    background: url(https://t3.ftcdn.net/jpg/02/11/52/42/360_F_211524227_Ett8aboQvVnROAFtqu3S1pW99Y3Th9vm.jpg);
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+    border-radius: 20px;
+    position: sticky;
+    padding: 30px 0px 20px 0px;
+    box-shadow:0px 0px 10px 5px;
+
+}
+
+.navbar-left{
+    margin-left: 20%;
+    position: relative;
+    flex:1;
+}
+
+.navbar-right{
+    flex:2;
+    box-sizing: border-box;
+}
+
+img{
+    display: inline;
+    width: 100px;
+    height: 50px;
+    margin-top: 2%;
+}
+
+.navbar-left h1{
+    display: inline;
+    padding: 0px 0px 0px 0px;
+    margin-top:-2%;
+    margin-left: 3%;
+    position: absolute;
+    top:40%;
+    font-family: "Comfortaa", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400px;
+    font-style: normal;
+    color: white;
+}
+
+
+
+
+input{
+    display: inline;
+    margin-left: 20%;
+    width:400px;
+    height:30px;
+    border-radius: 20px;
+    padding:0px 0px 0px 10px ;
+    border:1.5px solid black;
+    transition: 0.2s ease-in;
+    box-shadow: 5px 3px 10px;
+    margin-top: 2%;
+}
+
+input:hover{
+    box-shadow: 10px 3px 10px 2px;
+}
+
+.icon{
+    margin-left: 2%;
+    background-color: white;
+    color: #bfbfbf;
+    padding: 7px 7px 7px 7px;
+    border-radius:50% ;
+    border: 2px solid black;
+    box-shadow: 2px 0px 7px black;
+    position: absolute;
+    top:40%;
+}
+
+.container{
+    display: grid;
+}

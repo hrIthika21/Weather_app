@@ -1,11 +1,12 @@
-
-import Navbar from './Navbar.jsx';
+import Navbar from "./Navbar.jsx";
+import MainSection from "./MainSection.jsx";
 
 function App() {
 
   return (
     <>
-      <Navbar />
+    <Navbar />
+    <MainSection />
     </>
   )
 }

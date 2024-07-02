@@ -1,6 +1,8 @@
-import "./weather.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelopefaMagnifyingGlassLocation } from '@fortawesome/free-solid-svg-icons';
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+
+import "./weather.css"
+
 
 const Navbar = () => {
     return (  
@@ -10,11 +12,12 @@ const Navbar = () => {
                 </img>
                 <h1>Climate Target</h1>
             </div>
-            <div className="content-right">
-                <input placeholder="search Location"></input>
-                <FontAwesomeIcon icon={faMagnifyingGlassLocation} style={{color: "#b4b1b2",}} />
+            <div className="navbar-right">
+                <input placeholder="Search Location"></input>
+                <FontAwesomeIcon icon={faMagnifyingGlass} className='icon'/>  
             </div>
         </div>
+
     );
 }
  
