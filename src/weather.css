@@ -30,7 +30,7 @@ body{
     box-sizing: border-box;
 }
 
-img{
+.logo{
     display: inline;
     width: 100px;
     height: 50px;
@@ -81,16 +81,11 @@ input:hover{
     box-shadow: 2px 0px 7px black;
     position: absolute;
     top:40%;
+    cursor: pointer;
 }
 
 .container{
-    display: grid;
     margin: 40px;
-    grid-template-columns: 2fr 1fr;
-    grid-template-areas: 
-    ". . ."
-    ". . ."
-    "c c c";
     font-family: "Playwrite US Modern", cursive;
     font-optical-sizing: auto;
     font-weight: 400px;
@@ -99,9 +94,8 @@ input:hover{
     color: white;
     background: linear-gradient(rgb(176, 122, 224),rgb(150, 91, 177),rgba(166, 48, 187, 0.995));
     border: 5px solid rgb(0, 0, 0);
-
-
 }
+
 
 .background-clip{
     position: absolute;
@@ -112,29 +106,33 @@ input:hover{
     justify-content: center;
 }
 
-.location{
+.weather-icon{
+    width: 100px;
+    height: 100px;
+    margin-left: 40%;
+    margin-top: -10%;
+}
+
+.family{
     justify-content: center;
     align-items: center;
     display: grid;
 }
 
-.location h1{
-    padding: 0px 0px 0px 20px;
-}
 
-
-.location p{
-    margin-left: 35%;
+.temperature{
+    margin-left: 40%;
     margin-top: -2%;
 }
 
-.temperature,.humidity,.preciptation,.wind{
+.feels_like,.humidity,.preciptation,.wind{
     font-size: 15px;
 }
 
-.temperature p,.humidity p,.preciptation p,.wind p{
+.feels_like p,.humidity p,.preciptation p,.wind p{
     margin-top: 3%;
     font-size: 15px;
+    margin-left: 20%;
 }
 
 .footer{
@@ -146,50 +144,68 @@ input:hover{
 
 .hourly{
     font-size: 18px;
-    overflow-y: scroll;
-    max-height: 550px;
+    overflow-x: scroll;
+    max-width: 1300px;
+    flex-direction: row ;
+    display: flex;
+    margin-top: 50px;
 }
+
+
 
 .hourly::-webkit-scrollbar{
     width: 0px;
 }
 
 .item-1,.item-2,.item-3,.item-11,.item-12{
-    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZPEFKnZMxI71_PwjAmV0Z6JcntNl9y0iHfw&s);
-    background-size: cover;
-    display: grid;
+    background-color: black;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     grid-gap:10px;
-    margin: 70px;
-    padding:0px 0px 20px 0px;
+    padding:0px 0px 0px 0px;
     border-radius: 20px;
-    background-position: center;
+    min-width: 170px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    align-items: center;
 }
 
+.item-1{
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+
 .item-4,.item-5,.item-6,.item-7,.item-8,.item-10{
-    background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRv0FRp8TU8rt2n5-fP-fZhw8ZSWyi5pN6STw&s);
-    display: grid;
+    background: #000;
+    display: flex;
     flex-direction: column;
+    align-items: center;
+    min-width: 170px;
     justify-content: center;
     grid-gap:10px;
-    margin: 70px;
-    padding:0px 0px 20px 0px;
+    padding:0px 0px 0px 0px;
     border-radius: 20px;
     background-size: cover;
     background-position: center;
+    margin-right: 20px;
+    margin-bottom: 10px;
 }
 
 .item-9{
-    background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTORA6VsnYFbgBGGNi0aN_unqJbcQ2z9KCxdA&s);
-    display: grid;
+    background: #000;
+    display: flex;
     flex-direction: column;
+    align-items: center;
+    min-width: 170px;
     justify-content: center;
     grid-gap:10px;
-    margin: 70px;
-    padding:0px 0px 20px 0px;
+    padding:0px 0px 00px 0px;
     border-radius: 20px;
     background-size: cover;
+    margin-right: 20px;
+    margin-bottom: 10px;
 }
 
 
