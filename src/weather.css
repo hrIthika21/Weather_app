@@ -93,7 +93,7 @@ input:hover{
     font-style: normal;
     font-size: 30px;
     color: white;
-    background: linear-gradient(rgb(176, 122, 224),rgb(150, 91, 177),rgba(166, 48, 187, 0.995));
+    background: linear-gradient(60deg,rgb(176, 122, 224),rgb(150, 91, 177),rgba(166, 48, 187, 0.995));
     border: 5px solid rgb(0, 0, 0);
 }
 
