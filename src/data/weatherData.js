@@ -22,3 +22,22 @@ export const getHourlyData = async(cityName)=>{
         throw error;
     }
 }
+
+export const transformedData =  (data) =>{
+    const weekday = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    const indices = [8, 16, 24, 32, 39];
+  
+    const transformedData = indices.map(index => {
+        const item = data.list[index];
+        const date = new Date(item.dt_txt);
+        const dayName = weekday[date.getDay()]; // Get the name of the day
+
+    return {
+      ...item,
+      day: dayName,
+    };
+  });
+
+  return transformedData;
+};
+

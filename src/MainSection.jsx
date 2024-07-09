@@ -8,9 +8,7 @@ import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 function MainSection({Weatherdata,HourlyData,day}) {
     console.log(Weatherdata);
     console.log(HourlyData);
-    const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-
-    
+    console.log(day);
 
     return (
         <div className="container">
@@ -18,7 +16,7 @@ function MainSection({Weatherdata,HourlyData,day}) {
                 <div className="family">
                     <div className="location">
                         <h5>{Weatherdata.data.name} | {Weatherdata.data.sys.country}</h5>
-                        <img src={`http://openweathermap.org/img/wn/${Weatherdata.data.weather[0].icon}@2x.png`} alt='weather icon'></img>
+                        <img src={`http://openweathermap.org/img/wn/${Weatherdata.data.weather[0].icon}@2x.png`} alt='weather icon' className="weather-icon"></img>
                         <p className="temperature">{(Weatherdata.data.main.temp-273.15).toFixed(1)}&deg;C</p>
                         <div className="footer">
                         <div className="feels_like">
@@ -34,8 +32,8 @@ function MainSection({Weatherdata,HourlyData,day}) {
                             <p>{(Weatherdata.data.main.pressure)}hPa</p>
                         </div>
                         <div className="wind">
-                            <h1>Wind</h1>
-                            <p>{(Weatherdata.data.wind.speed)}km/h</p>
+                            <h1>Wind  </h1>
+                            <p>{(Weatherdata.data.wind.speed).toFixed(1)}km/h</p>
                         </div>
                     </div>
                 </div>
@@ -103,37 +101,35 @@ function MainSection({Weatherdata,HourlyData,day}) {
                     </div>
                     <div className="weekly">
                         <div className="index-1" role="button">
-                            <p>{day[0]}</p>
-                            <p>  32 &deg;C |  27 &deg;C</p>
+                            <p>{day[0].day}</p>
+                            <img src={`http://openweathermap.org/img/wn/${day[0].weather[0].icon}@2x.png`} alt="weather-icon"></img>
+                            <p>Temp : {(day[0].main.temp-273.15).toFixed(1)} &deg;C</p>
+                            <p>Humid : {day[0].main.humidity}%</p>
                         </div>
                         <div className="index-2" role="button">
-                            <p></p>
-                            <p>  31 &deg;C |  26 &deg;C</p>
+                            <p>{day[1].day}</p>
+                            <img src={`http://openweathermap.org/img/wn/${day[1].weather[0].icon}@2x.png`} alt="weather-icon"></img>
+                            <p>Temp : {(day[1].main.temp-273.15).toFixed(1)} &deg;C </p>
+                            <p>Humid : {day[1].main.humidity}%</p>
                         </div>
                         <div className="index-3" role="button">
-                            <p></p>
-                            <p>  31 &deg;C |  26 &deg;C</p>
+                            <p>{day[2].day}</p>
+                            <img src={`http://openweathermap.org/img/wn/${day[2].weather[0].icon}@2x.png`} alt="weather-icon"></img>
+                            <p>Temp : {(day[2].main.temp-273.15).toFixed(1)} &deg;C </p>
+                            <p>Humid : {day[2].main.humidity}%</p>
                         </div>
                         <div className="index-4" role="button">
-                            <p></p>
-                            <p>  31 &deg;C |  26 &deg;C</p>
+                            <p>{day[3].day}</p>
+                            <img src={`http://openweathermap.org/img/wn/${day[3].weather[0].icon}@2x.png`} alt="weather-icon"></img>
+                            <p>Temp : {(day[3].main.temp-273.15).toFixed(1)} &deg;C</p>
+                            <p>Humid : {day[3].main.humidity}%</p>
                         </div>
                         <div className="index-5" role="button">
-                            <p></p>
-                            <p>  30 &deg;C |  26 &deg;C</p>
+                            <p>{day[4].day}</p>
+                            <img src={`http://openweathermap.org/img/wn/${day[4].weather[0].icon}@2x.png`} alt="weather-icon"></img>
+                            <p>Temp : {(day[4].main.temp-273.15).toFixed(1)} &deg;C </p>
+                            <p>Humid : {day[4].main.humidity}%</p>
                         </div>
-                        <div className="index-6" role="button">
-                            <p></p>
-                            <p>  31 &deg;C |  26 &deg;C</p>
-                        </div>
-                        <div className="index-7" role="button">
-                            <p></p>
-                            <p>  31 &deg;C |  27 &deg;C</p>
-                            </div>
-                            <div className="index-8" role="button">
-                                <p></p>
-                                <p>  30 &deg;C |  27 &deg;C</p>
-                            </div> 
                     </div>
                 </div>
 
