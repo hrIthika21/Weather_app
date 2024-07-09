@@ -6,9 +6,6 @@ import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 
 
 function MainSection({Weatherdata,HourlyData,day}) {
-    console.log(Weatherdata);
-    console.log(HourlyData);
-    console.log(day);
 
     return (
         <div className="container">

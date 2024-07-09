@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playwrite+US+Modern:wght@100..400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 
 body{
     width: 100%;
@@ -261,6 +262,32 @@ input:hover{
     flex-direction: column;
     justify-content: center;
 }
+.error{
+    position: fixed;
+    background-color: rgb(246, 246, 207);
+    top:90%;
+    left:38%;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    padding: 10px 10px 10px 10px;
+    border-radius: 5px;
+    font-family: "Roboto Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 200px;
+    font-style: normal;
+}
 
+.error button{
+    background-color: transparent;
+    height:30px;
+    width: 30px;
+    transition: 0.3s ease-in;
+    border:none;
+    border-radius: 50%;
+}
 
+.error button:hover{
+    background: #b3b3b3;
+    padding: 0px 6px 0px 6px;
+}
 

@@ -2,7 +2,7 @@ import Navbar from "./Navbar.jsx";
 import MainSection from "./MainSection.jsx";
 import {useState,useEffect} from 'react';
 import {getWeatherData,getHourlyData,transformedData} from './data/weatherData';
-import errorMessage from "./ErrorMessage.jsx";
+import ErrorMessage from "./ErrorMessage.jsx";
 
 function App() {
     const[Weatherdata,setWeatherData]=useState(null);
@@ -17,7 +17,7 @@ function App() {
             setWeatherData(data);
             return data;
         }catch(error){
-            setError(error.message);
+            setError("Please, enter the correct data");
         }
     }
 
@@ -28,7 +28,7 @@ function App() {
         setDay(transformed);
         return hourlydata;
         }catch(error){
-            setError(error.message);
+            setError("Please, enter the correct data");
         }
     }
 
@@ -73,7 +73,7 @@ function App() {
     
   return (
     <>
-    {error && <errorMessage message={error} onClose={closeError} />}
+    {error && <ErrorMessage message={error} onClose={closeError} />}
     <Navbar 
     setCity={setCity}
     getData={getData}
