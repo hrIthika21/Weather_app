@@ -4,29 +4,61 @@ import {useState,useEffect} from 'react';
 import {getWeatherData,getHourlyData,transformedData} from './data/weatherData';
 import ErrorMessage from "./ErrorMessage.jsx";
 
+
 function App() {
     const[Weatherdata,setWeatherData]=useState(null);
-    const[city, setCity]=useState('Visakhapatnam');
+    const[city, setCity]=useState('visakhapatnam');
+    const[liveLocation,setliveLocation]=useState(false)
     const[HourlyData, setHourlyData]=useState(null);
     const[day,setDay]=useState([]);
     const[error,setError]=useState(null);
     
-    const getData = async() =>{
+
+    const fetchLiveLocation = async () => {
+        try {
+          const response = await fetch(`https://api.ipify.org?format=json`);
+          const data = await response.json();
+          const ipAddress = data.ip;
+      
+          const response2 = await fetch(`https://ipinfo.io/${ipAddress}/json`);
+          const name = await response2.json();
+          const cityName = name.city;
+        
+          setCity(cityName);
+          setliveLocation(true);
+          getData(cityName);
+          gethourlydata(cityName);
+      
+          return cityName;
+        } catch (error) {
+          throw new Error('Failed to fetch IP address');
+        }
+      };
+    if(liveLocation==false){
+        fetchLiveLocation();
+    }
+    
+
+
+
+
+    const getData = async(city) =>{
             try{
-            const data=await getWeatherData(city);
-            setWeatherData(data);
-            return data;
+                const data=await getWeatherData(city);
+                setWeatherData(data);
+                return data;
         }catch(error){
             setError("Please, enter the correct data");
         }
     }
 
-    const gethourlydata = async() => {
-        try{const hourlydata = await getHourlyData(city);
-        setHourlyData(hourlydata);
-        const transformed = transformedData(hourlydata.data);
-        setDay(transformed);
-        return hourlydata;
+    const gethourlydata = async(city) => {
+        try{
+            const hourlydata = await getHourlyData(city);
+            setHourlyData(hourlydata);
+            const transformed = transformedData(hourlydata.data);
+            setDay(transformed);
+            return hourlydata;
         }catch(error){
             setError("Please, enter the correct data");
         }
@@ -73,7 +105,6 @@ function App() {
     
   return (
     <>
-    {error && <ErrorMessage message={error} onClose={closeError} />}
     <Navbar 
     setCity={setCity}
     getData={getData}
@@ -84,6 +115,7 @@ function App() {
     HourlyData={HourlyData}
     day={day}
     />
+    {error && <ErrorMessage message={error} onClose={closeError} />}
     </>
   )
 }

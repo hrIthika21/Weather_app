@@ -22,7 +22,8 @@ const Navbar=({setCity,getData,gethourlydata})=>{
             </div>
             <div className="navbar-right">
                 <input placeholder="Search Location" onChange={(ev)=> setLocalCity(ev.target.value)} value={localCity}></input>
-                <FontAwesomeIcon icon={faMagnifyingGlass} className='icon' onClick={handleSearch} />  
+                <FontAwesomeIcon icon={faMagnifyingGlass} className='icon' onClick={handleSearch} />
+                <button className='save-location-button'>Save Location</button> 
             </div>
         </div>
 

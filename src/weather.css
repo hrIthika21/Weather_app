@@ -85,6 +85,55 @@ input:hover{
     cursor: pointer;
 }
 
+.save-location-button{
+    position: absolute;
+    top:43%;
+    left:92.8%;
+    padding: 7px 7px 7px 7px;
+    border-radius: 5px;
+    background-color: transparent;
+    color: rgb(0, 0, 0);
+    border: none;
+    cursor: pointer;
+    transition: transform 0.5s ease-in;
+    transition: 0.3s ease;
+}
+
+.save-location-button:hover{
+    background-color: #aa8eec;
+    color: white;
+}
+
+.save-location-button:hover::after,.save-location-button:hover::before{
+    width:100px;
+}
+
+.save-location-button:after,.save-location-button::before{
+    content: "";
+    position: absolute;
+    height: 3px;
+    width: 0px;
+    background-color: #000000;
+    left:30%;
+    transform: translateX(-30%);
+    transition: 0.3s ease;
+}
+
+
+
+.save-location-button::before{
+    top:-10%
+}
+
+.save-location-button::after{
+    bottom: -10%;
+}
+
+.save-location-button:active{
+    transform: scale(0.9);
+}
+
+
 .container{
     margin: 40px;
     font-family: "Playwrite US Modern", cursive;

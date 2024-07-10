@@ -6,7 +6,6 @@ import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 
 
 function MainSection({Weatherdata,HourlyData,day}) {
-
     return (
         <div className="container">
             {Weatherdata !== null ?  (
