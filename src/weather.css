@@ -162,6 +162,25 @@ input:hover{
     margin-left: 40%;
 }
 
+.pin-point{
+    position: absolute;
+    top:52.7%;
+    left:39%;
+    transform: translateX(70%);
+    color:rgb(161, 11, 11);
+    animation:jump 2s ease-out ;
+    animation-iteration-count: infinite;
+}
+
+@keyframes jump{
+    0%{transform: translateY(0px);}
+    25%{transform: translateY(-40px);}
+    50%{transform: translateY(0px);}
+    75%{transform: translateY(-20px);}
+    100%{transform: translateY(0px);}
+
+}
+
 .family{
     justify-content: center;
     align-items: center;

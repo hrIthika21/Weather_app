@@ -1,6 +1,6 @@
 import "./weather.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleUp } from '@fortawesome/free-solid-svg-icons';
+import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 
 
@@ -11,6 +11,7 @@ function MainSection({Weatherdata,HourlyData,day}) {
             {Weatherdata !== null ?  (
                 <div className="family">
                     <div className="location">
+                        <FontAwesomeIcon icon={faLocationDot} className="pin-point"/>
                         <h5>{Weatherdata.data.name} | {Weatherdata.data.sys.country}</h5>
                         <img src={`http://openweathermap.org/img/wn/${Weatherdata.data.weather[0].icon}@2x.png`} alt='weather icon' className="weather-icon"></img>
                         <p className="temperature">{(Weatherdata.data.main.temp-273.15).toFixed(1)}&deg;C</p>
