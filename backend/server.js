@@ -4,7 +4,7 @@ require('dotenv').config();
 const mongoose = require('mongoose');
 
 const app = express();
-const port = process.env.port || 5002;
+const port = process.env.PORT || 5002;
 
 app.use(cors());
 app.use(express.json());
@@ -12,10 +12,15 @@ app.use(express.json());
 const uri = process.env.WEATHER_URI;
 mongoose.connect(uri);
 
-mongoose.connection.once('open',()=>{
-    console.log("MongoDB database establised successfully");
+mongoose.connect(uri)
+.then(() => {
+    console.log("MongoDB database established successfully");
+})
+.catch((error) => {
+    console.error("MongoDB connection error:", error.message);
 })
 
-app.listen(port,()=>{
+
+app.listen(port, () => {
     console.log(`server is sucessfully running on ${port}`);
-});
+})

@@ -164,7 +164,7 @@ input:hover{
 
 .pin-point{
     position: absolute;
-    top:52.7%;
+    top:30%;
     left:39%;
     transform: translateX(70%);
     color:rgb(161, 11, 11);
